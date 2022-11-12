@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.7.1/styles/default.min.css">
+  </head>
+  <body>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/IDSNlogo.png" width="300">
+    <h1>Setup Watson Studio</h1>
+    <h2>Objective</h2>
+    <p>After completing this lab, you will be able to:</p>
+    <ol>
+      <li>Add a Watson Studio - Lite service</li>
+      <li>Create a project in Watson Studio</li>
+      <li>Add a notebook to a project</li>
+      <li>Perform Project Pre-trained Model</li>
+      <li>Share your results</li>
+    </ol>
+    <h2>Scenario</h2>
+    <p>For the deep learning portion of this lab, we will use Watson Studio. Its a more powerful version of Skills Network labs. It will also allow you to share your notebook to be marked. You will need the link from your Jupyter notebook from the previous section.</p>
+    <p>You will use the Jupyter notebook for your Particular Deep learning Framework. You will complete the notebook and submit it along with several screenshots to be marked by your peers.</p>
+    <p>The following will be the instructions on how to sign up for an account, load the notebook and share it. If you already have an account Please jump to Task two.</p>
+    <h2>Exercise 1: Add a Watson Studio - Lite service</h2>
+    <h3>Scenario</h3>
+    <p>In this exercise, you will use the IBM Cloud account you configured in the previous module. You will add the Watson Studio - Lite service to your IBM Cloud account.</p>
+    <p>If you have already added a Watson Studio - Lite service, you can skip Task 1 and proceed with Task 2.</p>
+    <blockquote>
+      <p>Several labs/assignments in this course require the use of IBM Cloud Lite accounts that previously did not require credit cards to sign up. However effective October 1st, IBM Cloud has suspended creation of new Lite accounts. The course team is working with the IBM Cloud to come up with a solution for learners taking courses and we anticipate we will have permanent solution in the coming weeks. However in he mean time, if you do not want to provide your credit card to create an IBM Cloud account, a temporary solution is to create a 30-day trial account by going to:</p>
+    </blockquote>
+    <p><a href="https://cocl.us/ibm_cloud_trial" target="_blank" rel="external">https://cocl.us/ibm_cloud_trial</a></p>
+    <blockquote>
+      <p>However if you decide to create an IBM Cloud account with a credit card, it is recommended that you specify US dollars for billing for faster approval. The labs/assignments in the course are designed to be completed with free tiers or Lite plans to avoid costs. Be aware that your credit card may be charged if you exceed the free usage so it is a good practice to delete your instances once they are not required. And in case of any services that are billed on an hourly basis, please be sure stop or delete your instance as soon as your lab is complete.</p>
+    </blockquote>
+    <blockquote>
+      <p>Note: the IBM and Coursera course teams are not be responsible for any billed usage you may incur while using IBM Cloud.</p>
+    </blockquote>
+    <h3>Task 1: Log in to your IBM Cloud account and add the Watson Studio - Lite service</h3>
+    <p><em>Complete this task only if you have not yet configured Watson Studio - Lite. Otherwise, go to Task 2</em>.</p>
+    <ol>
+      <li>Go to the <a href="https://cloud.ibm.com/?utm_medium=Exinfluencer&#x26;utm_source=Exinfluencer&#x26;utm_content=000026UJ&#x26;utm_term=10006555&#x26;utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkDL0321ENSkillsNetwork20647850-2022-01-01" target="_blank" rel="external">IBM Cloud</a> page, enter your <strong>Email ID</strong>, and then click <strong>Continue</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/Login.PNG" width="600">
+    <ol start="2">
+      <li>On the Dashboard, click <strong>Create Resource</strong></li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/2.png" width="600">
+    <ol start="3">
+      <li>In the Catalog, click <strong>AI (16)</strong>. Note that the <strong>Lite</strong> plan is selected</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/3.png" width="600">
+    <ol start="4">
+      <li>In the list of <strong>Services</strong>, click <strong>Watson Studio</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/4.png" width="600">
+    <ol start="5">
+      <li>On the Watson Studio page, select the region closest to you, verify that the <strong>Lite</strong> plan is selected, and then click <strong>Create</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/5-create_watson_studio_lite.jpg" width="600">
+    <ol start="6">
+      <li>When the Watson Studio resource is successfully created, you will see the Watson Studio page. Click <strong>Get Started</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/6.png" width="600">
+    <h2>Task 2: Launch Watson Studio</h2>
+    <p><em>Complete this task if you have an existing Watson Studio - Lite service. Otherwise, go to Task 1</em>.</p>
+    <ol>
+      <li>Go to the <a href="https://cloud.ibm.com/login?utm_medium=Exinfluencer&#x26;utm_source=Exinfluencer&#x26;utm_content=000026UJ&#x26;utm_term=10006555&#x26;utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkDL0321ENSkillsNetwork20647850-2022-01-01" target="_blank" rel="external">IBM Cloud</a> page, enter your <strong>Email ID</strong>, and then click <strong>Continue</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/Login.PNG" width="600">
+    <ol start="2">
+      <li>On the Dashboard, click <strong>Services</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/9.png" width="600">
+    <ol start="3">
+      <li>In the Resource list, expand <strong>Services</strong>, and then click the Watson Studio service.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/10.png" width="600">
+    <ol start="4">
+      <li>When the Watson Studio resource is successfully created, you will see the Watson Studio page. Click <strong>Get Started</strong></li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/11.png" width="600">
+    <h2>Exercise 2: Create a new project and add a Jupyter Notebook</h2>
+    <h3>Scenario</h3>
+    <p>In this exercise, you will create a project to hold all the resources and services for your data analysis.</p>
+    <h3>Task 1: Create a new project</h3>
+    <ol>
+      <li>On the Watson Studio Welcome page, click <strong>Create a project</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/7-create_project.jpg" width="600">
+    <ol start="2">
+      <li>On the Create a project page, click <strong>Create an empty project</strong></li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/13.png" width="600">
+    <ol start="3">
+      <li>On the New project page, enter a <strong>Name</strong> and <strong>Description</strong> for your project</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/14.png" width="600">
+    <ol start="4">
+      <li>
+        If your IBM Cloud account does not have existing storage for your project, you will be prompted to create it.
+        If your IBM Cloud account does have storage, go to <em>Task 2: Add a Jupyter Notebook</em>.
+        Under Select <strong>storage service</strong>, click <strong>Add</strong>.
+      </li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/15.png" width="600">
+    <ol start="5">
+      <li>On the Cloud Object Storage page, verify that <strong>Lite</strong> is selected, and then click <strong>Create</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/16.png" width="600">
+    <ol start="6">
+      <li>In the Confirm Creation box, click <strong>Confirm</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/17.png" width="600">
+    <h2>Task 2: Add a Jupyter Notebook</h2>
+    <ol>
+      <li>On the project page, click <strong>New asset</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/a.png" width="600">
+    <ol start="2">
+      <li>In the Choose asset type box, select <strong>Code editors</strong>, then click <strong>Jupyter Notebook editor</strong></li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/b.png" width="600">
+    <ol start="3">
+      <li>On the Load Notebook page, enter a <strong>Name</strong> for your notebook, then click <strong>From URL</strong>. On the <strong>Notebook URL</strong> line, copy and paste the notebook URL from the introduction for the deep learning framework of yourchoice.</li>
+    </ol>
+    <blockquote>
+      <p>Note: Select runtime with 1vCPU 4GB RAM, as shown below.</p>
+    </blockquote>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/c.png" width="600">
+    <ol start="4">
+      <li>The notebook you select, wwill contains the instructions and information for the assignment, is loaded</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/21.png" width="600">
+    <h2>Exercise 3: Perform Project on Pre-trained Model</h2>
+    <h3>Scenario</h3>
+    <p>Train a neural network to determine if an image of concrete has a crack or does not have a crack.</p>
+    <h3>Task 1: Train the output layer</h3>
+    <ol>
+      <li>Follow the instructions in the Notebook to complete the assignment.</li>
+    </ol>
+    <h3>Task 2: Share your results</h3>
+    <ol>
+      <li>In the Notebook, on the toolbar, click <strong>Share</strong></li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/22.png" width="600">
+    <ol start="2">
+      <li>In the Share box, select <strong>All content excluding sensitive code cells</strong>.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/23.png" width="600">
+    <ol start="3">
+      <li>To share the Notebook, scroll down and copy the permalink.</li>
+    </ol>
+    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DL0321EN-SkillsNetwork/labs/Week4/images/24.png" width="600">
+    <h2>Author(s)</h2>
+    <p><a href="https://www.linkedin.com/in/joseph-s-50398b136/?utm_medium=Exinfluencer&#x26;utm_source=Exinfluencer&#x26;utm_content=000026UJ&#x26;utm_term=10006555&#x26;utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkDL0321ENSkillsNetwork20647850-2022-01-01" target="_blank" rel="external">Joseph Santarcangelo</a></p>
+    <h2>Changelog</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Version</th>
+          <th>Changed by</th>
+          <th>Change Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2020-09-17</td>
+          <td>2.0</td>
+          <td>Shubham</td>
+          <td>Migrated Lab to Markdown and added to course repo in GitLab</td>
+        </tr>
+        <tr>
+          <td>2022-10-07</td>
+          <td>2.1</td>
+          <td>Srishti</td>
+          <td>Updated steps to Watson Studio UI and Jupyter notebook runtime</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>window.addEventListener('load', function() {
+snFaculty.inject();
+});</script>
+    <script src="https://skills-network-assets.s3.us.cloud-object-storage.appdomain.cloud/scripts/inject.43989f87.js"></script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.1/highlight.min.js"></script>
+    <script src="https://unpkg.com/highlightjs-badge@0.1.9/highlightjs-badge.min.js"></script>
+  </body>
+</html>
